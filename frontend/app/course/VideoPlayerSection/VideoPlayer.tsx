@@ -43,7 +43,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   };
 
   return (
-    <div className="video-player-section">
+    <div className="video-player-section h-[70%] mb-4">
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-lg font-semibold">{title}</h2>
         <div className="flex space-x-2">
@@ -66,22 +66,21 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       </div>
       {type === "video" ? (
         <video
-          className="w-full rounded-md shadow-lg"
+          className="w-[80%] h-[90%] rounded-md border-2 border-black shadow-lg mx-auto mt-6"
           controls
           preload="metadata"
           src={url}
         >
           Your browser does not support the video tag.
         </video>
-      ) : (
-        <iframe
-          className="w-full h-[75vh] rounded-md shadow-lg"
-          src={`https://docs.google.com/gview?url=${encodeURIComponent(
-            url
-          )}&embedded=true`}
-          title={title}
-        />
-      )}
+        ) : (
+          <iframe
+            className="w-[80%] h-[90%] rounded-md border-2 border-black shadow-lg mx-auto mt-6"
+            src={`https://docs.google.com/gview?url=${encodeURIComponent(url)}&embedded=true`}
+            title={title}
+          />
+        )
+      }
     </div>
   );
 };

@@ -59,20 +59,26 @@ const NotesSection = ({ courseId, userId }: { courseId: string; userId: string }
     };
 
     return (
-        <div className="mt-4">
-            <div className="flex justify-between items-center">
-                <h3 className="text-lg font-semibold">Take Notes</h3>
-                <button
-                    onClick={() => setHidden(!hidden)}
-                    className="text-blue-500 underline text-sm"
-                >
-                    {hidden ? 'Show Notes' : 'Hide Notes'}
-                </button>
-            </div>
-            {!hidden && (
-                <NotesContainer notes={notes} onAdd={addNote} onEdit={editNote} onDelete={deleteNote} />
-            )}
-        </div>
+        <div className="mt-4 w-[80%] mx-auto">
+  <div className="flex justify-between items-center">
+    <h3 className="text-lg font-semibold">Take Notes</h3>
+    <button
+      onClick={() => setHidden(!hidden)}
+      className="text-blue-500 underline text-sm"
+    >
+      {hidden ? 'Show Notes' : 'Hide Notes'}
+    </button>
+  </div>
+  {!hidden && (
+    <NotesContainer
+      notes={notes}
+      onAdd={addNote}
+      onEdit={editNote}
+      onDelete={deleteNote}
+    />
+  )}
+</div>
+
     );
 };
 
