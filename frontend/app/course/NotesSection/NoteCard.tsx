@@ -13,7 +13,7 @@ const NoteCard = ({
 }) => {
   return (
     <div
-      className={`relative p-4 rounded ${color} shadow-md flex items-center`}
+      className={`relative p-6 min-h-[120px] rounded ${color} shadow-md flex items-center`}
     >
       <p className="text-sm break-words">{note.content}</p>
       <Menu as="div" className="absolute top-2 right-2">
