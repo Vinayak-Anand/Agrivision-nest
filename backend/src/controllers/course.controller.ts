@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Course, { CourseInterface } from "../models/course.model";
 import UserCourse from "../models/userCourse.model";
 
-export const createCourse = async (req: Request, res: Response) => {
+export const makeCourse = async (req: Request, res: Response) => {
   try {
     const course: CourseInterface = new Course(req.body);
     const savedCourse = await course.save();
@@ -12,7 +12,7 @@ export const createCourse = async (req: Request, res: Response) => {
   }
 };
 
-export const addParentTopic = async (
+export const createParentTopic = async (
   req: Request,
   res: Response
 ): Promise<void> => {
@@ -69,7 +69,7 @@ export const addParentTopic = async (
   }
 };
 
-export const addContent = async (
+export const insertMaterial = async (
   req: Request,
   res: Response
 ): Promise<void> => {
@@ -125,7 +125,7 @@ export const addContent = async (
   }
 };
 
-export const getCourses = async (req: Request, res: Response) => {
+export const fetchCourses = async (req: Request, res: Response) => {
   try {
     const courses = await Course.find();
     res.status(200).json(courses);
@@ -134,7 +134,7 @@ export const getCourses = async (req: Request, res: Response) => {
   }
 };
 
-export const getCourseById = async (
+export const fetchCourseById = async (
   req: Request,
   res: Response
 ): Promise<void> => {

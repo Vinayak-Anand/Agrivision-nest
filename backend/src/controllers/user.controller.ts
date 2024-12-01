@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import User, { IUser } from "../models/user.model";
+import User, { UserInterface } from "../models/user.model";
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const user: IUser = new User(req.body);
+    const user: UserInterface = new User(req.body);
     const savedUser = await user.save();
     res.status(201).json(savedUser);
   } catch (error) {

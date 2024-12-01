@@ -1,23 +1,23 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export interface IContent {
+export interface ContentInterface {
   contentId: string;
   type: string; // e.g., "video", "pdf"
   title: string; // Title of the content
   url: string; // Content URL
 }
 
-export interface IParentTopic {
+export interface ParentInterface {
   parentId: string;
   title: string; // e.g., "Milk Processing"
-  contents: IContent[];
+  contents: ContentInterface[];
 }
 
 export interface CourseInterface extends Document {
   courseId: string;
   title: string;
   category: string;
-  parentTopics: IParentTopic[];
+  parentTopics: ParentInterface[];
   createdBy: string; // Reference to the creator (could be a user ID)
   description: string;
   thumbnail: string; // URL to the course thumbnail

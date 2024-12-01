@@ -240,7 +240,7 @@ export const addNote = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const updateNote = async (
+export const modifyNote = async (
   req: Request,
   res: Response
 ): Promise<void> => {
@@ -265,7 +265,7 @@ export const updateNote = async (
   }
 };
 
-export const deleteNote = async (
+export const removeNote = async (
   req: Request,
   res: Response
 ): Promise<void> => {

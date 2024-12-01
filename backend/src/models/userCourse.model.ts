@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export interface IContentProgress {
+export interface ContentProgressionInterface {
   contentId: string;
   status: string; // e.g., "Completed", "Paused", "In Progress"
 }
@@ -13,7 +13,7 @@ export interface UserCourseInterface extends Document {
     lastAccessedContent: string; // Content ID of the last accessed item
     contentStatus: {
       parentTopicId: string; // Parent topic identifier
-      contents: IContentProgress[]; // Track progress for each content in the parent topic
+      contents: ContentProgressionInterface[]; // Track progress for each content in the parent topic
     }[];
   };
   notes: [

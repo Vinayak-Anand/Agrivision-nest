@@ -6,7 +6,6 @@ import errorHandler from "./middlewares/errorHandler";
 
 
 import courseRoutes from "./routes/course.routes";
-import shortNoteRoutes from "./routes/shortNote.routes";
 import userRoutes from "./routes/user.routes";
 import userCourseRoutes from "./routes/userCourse.routes";
 
@@ -31,8 +30,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/courses", courseRoutes);
 
 app.use("/api/user-courses", userCourseRoutes);
-
-app.use("/api/notes", shortNoteRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
